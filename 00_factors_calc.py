@@ -4,17 +4,13 @@
 # Main routine goes here
 
 # Heading
-from turtle import heading
-from xml.etree.ElementTree import Comment
-
-from numpy import var
-
-
 statement_generator("Factors Calculator", "-")
 
 
 # Displat instructions if user has not used the program before
-first_time == "":
+first_time = input("Press <enter> to see the instructions or any key to continue ")
+
+if first_time == "":
     instructions()
 
 # Loop to allow multiple calculations per session
@@ -49,3 +45,12 @@ while keep_going == "":
 
     # Output factors and comment
     statement_generator(heading, "*")
+    print()
+    print(factor_list)
+    print(comment)
+
+    print()
+    keep_going = input("Press <enter> to continue or any jey to quit ")
+
+print()
+print("Thank you for using the factors calculator")

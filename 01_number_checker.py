@@ -5,6 +5,7 @@ def num_check (question):
     while not valid:
 
         error = "Please enter an integer {}".format
+        error_2 = ""
 
         try:
             
@@ -21,13 +22,13 @@ def num_check (question):
                 print()
         
         except ValueError:
-            print(error)
+            print(error_2)
 
 keep_going = ""
 while keep_going == "":
     
     print()
     # ask user for integer (must be more than (or equal to) 1 and less than (or equal to) 200)
-    var_integer = num_check("Enter an integer: ", )
+    var_integer = num_check("Enter an integer: ")
     print()
 
