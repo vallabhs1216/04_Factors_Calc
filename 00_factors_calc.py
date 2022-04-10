@@ -1,5 +1,5 @@
 # Funtions go here
-
+import math
 
 # Puts a series of symbols at the start and end of text
 def statement_generator(text, decoration):
@@ -55,6 +55,36 @@ def num_check(question, low, high):
             print(error_2)
 
 
+# Gets factors
+def get_factors(to_factor):
+    if to_factor == 1:
+        return [1]
+
+    my_list = []
+    
+
+    # range 
+    for num in range(1):
+        if to_factor % num == 0:
+            a_factor = to_factor // num
+            my_list.append(a_factor)
+            my_list.append(num)
+
+    my_list.sort()
+    
+    # the set only stores unique values
+    my_list = list(set(my_list))
+
+    return my_list
+
+def is_prime(factors):
+    # prime numbers only have 2 factors
+    return len(factors) == 2
+
+def is_perfect_square(factors):
+    # perfect squares have odd numbers of factors.
+    return len(factors) % 2 != 0
+
 # Main routine goes here
 
 # Heading
@@ -74,7 +104,7 @@ while keep_going == "":
     comment = ""
 
     # ask a user fo number to be factored
-    var_to_factor = num_check("Enter an integer: ")
+    var_to_factor = num_check("Enter an integer: ", low=1, high=200)
 
     if var_to_factor != 1:
         factor_list = get_factors(var_to_factor)
@@ -104,7 +134,8 @@ while keep_going == "":
     print(comment)
 
     print()
-    keep_going = input("Press <enter> to continue or any jey to quit ")
+    keep_going = input("Press <enter> to continue or any key to quit ")
 
 print()
 print("Thank you for using the factors calculator")
+
