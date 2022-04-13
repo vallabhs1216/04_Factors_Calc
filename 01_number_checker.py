@@ -29,6 +29,6 @@ while keep_going == "":
     
     print()
     # ask user for integer (must be more than (or equal to) 1 and less than (or equal to) 200)
-    var_integer = num_check("Enter an integer: ", low=1, high=200)
+    var_integer = num_check("Enter an integer: " )
     print()
 
